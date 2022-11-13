@@ -117,7 +117,7 @@ public class PuzzleMap {
     }
 
 
-    private void swap(int x1, int y1, int x2 ,int y2){
+    public void swap(int x1, int y1, int x2 ,int y2){
         PuzzleBlock temp = map[y1][x1];
         map[y1][x1] = map[y2][x2];
         map[y2][x2] = temp;

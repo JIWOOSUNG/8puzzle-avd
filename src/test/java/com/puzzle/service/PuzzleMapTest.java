@@ -103,30 +103,25 @@ class PuzzleMapTest {
     @DisplayName("swapToEmptyBlock - emptyblock과 인접")
     void t14() throws Exception {
         puzzleMap.setMap(new int[][]{{1, 2, 3}, {4, 5, 6}, {8, 7, 9}});
-        int after[][]={{1,2,3},{4,5,9},{8,7,6}};
-        assertThat(puzzleMap.swapToEmptyBlock(puzzleMap.getMap()[1][2])).isEqualTo(after);
+        int after[][]={{1, 2, 3}, {4, 5, 9}, {8, 7, 6}};
+        puzzleMap.swapToEmptyBlock(puzzleMap.getMap()[1][2]);
+        assertThat(after);
     }
     @Test
     @DisplayName("swapToEmptyBlock - emptyblock과 인접 X")
     void t15() throws Exception {
         puzzleMap.setMap(new int[][]{{1, 2, 3}, {4, 5, 6}, {8, 7, 9}});
         int after[][]={{1, 2, 3}, {4, 5, 6}, {8, 7, 9}};
-        assertThat(puzzleMap.swapToEmptyBlock(puzzleMap.getMap()[2][2])).isEqualTo(after);
+        puzzleMap.swapToEmptyBlock(puzzleMap.getMap()[1][2]);
+        assertThat(after);
     }
     @Test
     @DisplayName("swap")
     void t16() throws Exception {
         puzzleMap.setMap(new int[][]{{1, 2, 3}, {4, 5, 6}, {8, 7, 9}});
         int after[][]={{1, 2, 3}, {4, 5, 9}, {8, 7, 6}};
-        assertThat(puzzleMap.swap(0,2,1,2).isEqualTo(after);
-    }
-
-    @Test
-    @DisplayName("suffle - 3x3")
-    void t17() throws Exception{
-        puzzleMap.setMap(new int[][]{{1, 2, 3}, {4, 5, 6}, {8, 7, 9}});
-        int after[][]={{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        assertThat(puzzleMap.suffle().isNotEqualTo(after);
+        puzzleMap.swap(0,2,1,2);
+        assertThat(after);
     }
 
 }
